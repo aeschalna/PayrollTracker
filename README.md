@@ -1,2 +1,1 @@
-# PayrollTracker
-Module 3 Challenge
+# Employee Payroll Tracker Starter Code
