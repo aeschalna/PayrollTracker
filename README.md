@@ -1,55 +1,23 @@
 # Employee Payroll Tracker Starter Code
-// My Code:
-const collectEmployees = function () {
-  let continueAdding = true;
+Description: Create an application to input, track, & calculate employee payroll data
 
-  while (continueAdding) {
-    let firstName = prompt("Enter employee's first name:");
-    let lastName = prompt("Enter employee's last name:");
-    let salaryInput = prompt("Enter employee's salary:");
-    let salary = isNaN(Number(salaryInput)) ? 0 : Number(salaryInput);
+Source code: https://github.com/coding-boot-camp/curly-potato
 
-    employees.push({ firstName, lastName, salary });
+USER STORY
+AS A payroll manager
+I WANT AN employee payroll tracker
+SO THAT I can see my employees' payroll data and properly budget for the company
 
-    let addAnother = prompt("Add another employee?");
-    continueAdding = addAnother === 'yes';
-  }
-  displayEmployees(employees);
-  displayAverageSalary(employees);
-  console.log('==============================');
-  getRandomEmployee(employees);
+ACCEPTANCE CRITERIA
+GIVEN an employee payroll tracker
+WHEN I click the "Add employee" button
+THEN I am presented with a series of prompts asking for first name, last name, and salary
+WHEN I finish adding an employee
+THEN I am prompted to continue or cancel
+WHEN I choose to continue
+THEN I am prompted to add a new employee
+WHEN I choose to cancel
+THEN my employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data
 
-  return employees;
-};
-
-const displayAverageSalary = function (employeesArray) {
-
-  let totalSalary = 0;
-  let employeeCount = employeesArray.length;
-
-  employeesArray.forEach(employee => {
-    totalSalary += employee.salary;
-  });
-
-  const averageSalary = employeeCount === 0 ? 0 : totalSalary / employeeCount;
-
-  if (employeeCount === 0) {
-    console.log("No values available.");
-    return;
-  }
-
-  console.log(`Average Salary: $${averageSalary.toFixed(2)}`);
-};
-
-const getRandomEmployee = function (employeesArray) {
-
-  const randomIndex = Math.floor(Math.random() * employeesArray.length);
-  const randomEmployee = employeesArray[randomIndex];
-
-  console.log("Random Employee: ");
-  console.log(`First Name: ${randomEmployee.firstName}`);
-  console.log(`Last Name: ${randomEmployee.lastName}`);
-  console.log(`Salary: $${randomEmployee.salary}`);
-
-  return;
-};
+LINK TO DEPLOYED APPLICATION
+https://aeschalna.github.io/PayrollTracker/
